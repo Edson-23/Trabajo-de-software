@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <unistd.h>
+
+void semaforo(int Luz_roja, int Luz_amarilla, int Luz_verde)//Funcion de simulacion de semafoto
+{
+	int i=1;//variable auxiliar para el bucle
+	do{
+		printf("-Semaforo en Rojo-\n");//Impresion del mensaje que se esta ejecutando la luz roja
+		system("color 47");//para cambiar el color de las letras y el color del fondo
+		sleep(Luz_roja);//Tiempo de espera para dejar de ejecutarse 
+		printf("*Semaforo en Verde*\n");//Impresion del mensaje que se esta ejecutando la luz verde
+		system("color 27");
+		sleep(Luz_verde);
+		printf("-Semaforo en Amarillo\n");//Impresion del mensaje que se esta ejecutando la luz amarilla
+		system("color 67");
+		sleep(Luz_amarilla);
+	}while(i=1); //El bucle se ejecutara siempre, ya que no hay actualizacion de la variable, por lo tanto es infinito
+}
+int main()
+{
+	int Luz_roja = 15, Luz_amarilla = 5, Luz_verde = 20;//Declaracion de variables
+	
+	
+	semaforo(Luz_roja, Luz_amarilla, Luz_verde);//Funcion a llamar para ejecutarlo
+	
+	return 0;
+}
